@@ -1,0 +1,105 @@
+
+:root {
+    --cor-principal: blue;
+    --cor-secundaria: black;
+    --fonte-principal: "Century Gothic", sans-serif;
+    --tamanho-titulo: 24px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--fonte-principal);
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+header {
+    border: 1px solid var(--cor-principal);
+    padding: 20px;
+    margin: 10px;
+}
+
+section {
+    border: 1px solid var(--cor-principal);
+    padding: 15px;
+    margin: 10px;
+}
+
+article {
+    border: 1px solid var(--cor-principal);
+    padding: 15px;
+    margin: 10px;
+}
+
+h1 {
+    color: var(--cor-secundaria);
+    font-size: var(--tamanho-titulo);
+}
+
+p {
+    color: var(--cor-secundaria);
+}
+
+/* Imagens responsivas */
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Menu de navegação */
+
+#menu {
+    display: none;
+}
+
+nav {
+    display: none;
+}
+
+/* Abrir menu pelo clique */
+
+#menu:checked ~ nav {
+    display: block;
+}
+
+/* Esconder botão abrir quando menu estiver aberto */
+
+#menu:checked + label {
+    display: none;
+}
+
+/* Mostrar menu ao passar o mouse */
+
+header:hover nav {
+    display: block;
+}
+
+/* Coleção de filmes */
+
+.colecao {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+/* Telas pequenas */
+
+@media (max-width: 600px) {
+    .colecao {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Impressão */
+
+@media print {
+    nav {
+        display: none;
+    }
+}
